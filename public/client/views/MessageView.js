@@ -1,4 +1,3 @@
-//returns rendered template
 var MessageView = Backbone.View.extend({
   template : _.template(
     '<div class="message-display"> \
