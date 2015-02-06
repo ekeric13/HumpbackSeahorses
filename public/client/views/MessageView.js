@@ -24,8 +24,25 @@ var MessageView = Backbone.View.extend({
   },
 
   toggleLanguage: function(e) {
-    this.$el.find('span.text').toggle();
-    this.$el.find('span.alt-text').toggle();
+    e && e.preventDefault();
+    console.log("toggled");
+    // var translationMessageView = new TranslationMessageView(model: this.model);
+    // ("#originalText").append(translationMessageView )
+    // this.$el.find('span.text').toggle();
+    var _this = this;
+    this.toggle = window.setTimeout(function(){
+      console.log(_this, _this.$el);
+       _this.$el.find('div.alt-text').toggle();
+    }, 600);
+
+    // this.$el.find('span.alt-text').delay(500).toggle().animate({ opacity: 1 }, 1000, 'swing', function() {this.$el.find('span.alt-text').toggle() } );
+
+  },
+
+  untoggleLanguage: function(e) {
+    e && e.preventDefault;
+    window.clearTimeout(this.toggle);
+    this.$el.find('div.alt-text').css("display", "none");
   }
 });
 
