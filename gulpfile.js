@@ -35,8 +35,8 @@ gulp.task('images', function () {
   return gulp.src('./public/client/img/**/*')
     .pipe(imagemin({
       progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
+      svgoPlugins: [{removeViewBox: false}]
+      // use: [pngquant()]
     })).pipe(gulp.dest('./public/client/images'));
 });
 
